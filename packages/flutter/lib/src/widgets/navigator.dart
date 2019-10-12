@@ -1512,6 +1512,9 @@ class NavigatorState extends State<Navigator> with TickerProviderStateMixin {
   final GlobalKey<OverlayState> _overlayKey = GlobalKey<OverlayState>();
   final List<Route<dynamic>> _history = <Route<dynamic>>[];
   final Set<Route<dynamic>> _poppedRoutes = <Route<dynamic>>{};
+  
+  /// Access the history from within custom routes
+  List<Route<dynamic>> get history => this._history;
 
   /// The [FocusScopeNode] for the [FocusScope] that encloses the routes.
   final FocusScopeNode focusScopeNode = FocusScopeNode(debugLabel: 'Navigator Scope');
